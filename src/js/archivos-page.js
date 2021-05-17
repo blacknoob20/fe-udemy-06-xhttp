@@ -1,5 +1,7 @@
+import { subirImagen } from "./http-providers";
+
 const body = document.body;
-let inputFile, fileFoto;
+let inputFile, imgFoto;
 
 const crearHtlm = () => {
     const html = `
@@ -16,13 +18,14 @@ const crearHtlm = () => {
     div.innerHTML = html;
     body.append(div);
     inputFile = document.querySelector('input');
-    fileFoto  = document.querySelector('#foto');
+    imgFoto  = document.querySelector('#foto');
 }
 
 const eventos = () => {
     inputFile.addEventListener('change', (evt) => {
         const file = evt.target.files[0];
-        console.log(file);
+        
+        subirImagen(file).then( url => imgFoto.src = url );
     })
 }
 
