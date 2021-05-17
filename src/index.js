@@ -15,3 +15,4 @@ const crisId = 604;
 //     "job": "PHP Developer"
 // }).then(console.log);
 
+CRUD.eliUsuario(crisId).then(console.log);

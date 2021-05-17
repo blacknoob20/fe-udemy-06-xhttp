@@ -27,12 +27,19 @@ const actUsuario = async(id, usuario) => {
             'Content-Type': 'application/json'
         }
     });
-
+    
     return (await resp.json());
+}
+
+const eliUsuario = async(id) => {
+    const resp = await fetch(`${urlCRUD}/${id}`, { method: 'DELETE' });
+
+    return (resp.ok? 'Borrado': 'No se pudo borrar');
 }
 
 export{
     getUsuario,
     insUsuario,
-    actUsuario
+    actUsuario,
+    eliUsuario
 }
