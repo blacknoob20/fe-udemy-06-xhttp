@@ -16,10 +16,23 @@ const insUsuario = async(usuario) => {
         }
     });
 
-    console.log(await resp.json());
+    return (await resp.json());
+}
+
+const actUsuario = async(id, usuario) => {
+    const resp = await fetch(`${urlCRUD}/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(usuario),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    return (await resp.json());
 }
 
 export{
     getUsuario,
-    insUsuario
+    insUsuario,
+    actUsuario
 }
