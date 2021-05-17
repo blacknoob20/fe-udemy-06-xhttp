@@ -2,3 +2,8 @@
 import * as CRUD from "./js/crud-providers";
 
 CRUD.getUsuario(1).then(console.log);
+
+CRUD.insUsuario({
+    "name": "Cristhian",
+    "job": "Developer"
+})

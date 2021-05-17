@@ -7,6 +7,19 @@ const getUsuario = async(id) => {
     return data;
 }
 
+const insUsuario = async(usuario) => {
+    const resp = await fetch(urlCRUD, {
+        method: 'POST',
+        body: JSON.stringify(usuario),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    console.log(await resp.json());
+}
+
 export{
-    getUsuario
+    getUsuario,
+    insUsuario
 }
